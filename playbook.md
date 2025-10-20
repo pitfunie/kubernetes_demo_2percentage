@@ -34,7 +34,7 @@ etcdctl snapshot save /tmp/etcd-snap.db \
 
 aws s3 cp /tmp/etcd-snap.db s3://your-audit-bucket/etcd-snapshots/
 
-Step 2: Plan the upgrade
+## Step 2: Plan the upgrade
 bash
 
 kubeadm version
