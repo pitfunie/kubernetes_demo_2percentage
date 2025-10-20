@@ -40,4 +40,31 @@ This repo shows how to build a reliable Kubernetes platform on AWS using Terrafo
    git clone https://github.com/kubernetes_demo_2percentage
    cd kubernetes_demo_2percentage/terraform
 
+3.   Deploy the infrastructure
 
+bash
+
+terraform init
+terraform apply -auto-approve
+
+4.   Apply CRDs and Helm charts
+
+bash
+
+kubectl apply -f ../argo/application.yaml
+helm upgrade --install my-app ../helm/my-app --namespace default
+kubectl apply -f ../monitoring/prometheus-rules.yaml
+
+5.   Run the upgrade demo Follow the steps in runbook/Runbook.md
+
+Cleanup
+
+terraform destroy -auto-approve
+kubectl delete -f ../argo/application.yaml
+aws s3 rm s3://your-audit-bucket/ --recursive
+
+Notes
+
+    This demo is safe to run in a sandbox AWS account.
+
+    You can use this as a hands-on artifact in workshops.
