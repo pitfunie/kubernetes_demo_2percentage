@@ -36,3 +36,8 @@ This repo shows how to build a reliable Kubernetes platform on AWS using Terrafo
    ```bash
    git clone https://github.com/your-org/eks-platform-demo.git
    cd eks-platform-demo/terraform
+   
+   git clone https://github.com/kubernetes_demo_2percentage
+   cd kubernetes_demo_2percentage/terraform
+
+
